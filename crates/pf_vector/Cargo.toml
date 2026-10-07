@@ -1,0 +1,19 @@
+[package]
+name = "pf_vector"
+version = "0.1.0"
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+description = "PhotoFinder Next 2 — 向量索引引擎（HNSW + 量化）"
+
+[dependencies]
+serde = { workspace = true }
+thiserror = { workspace = true }
+ndarray = { workspace = true }
+once_cell = { workspace = true }
+hnsw_rs = { workspace = true }
+parking_lot = { workspace = true }
+tracing = { workspace = true }
+
+[lints.clippy]
+disallowed_methods = "deny"

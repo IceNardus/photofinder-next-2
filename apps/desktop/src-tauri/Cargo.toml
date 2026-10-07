@@ -1,0 +1,54 @@
+[package]
+name = "photofinder-desktop"
+version = "0.1.0"
+description = "PhotoFinder Next 2 — Desktop shell (Tauri 2)"
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+[lib]
+name = "photofinder_desktop"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[[bin]]
+name = "photofinder-desktop"
+path = "src/main.rs"
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }
+tauri-plugin-dialog = "2"
+tauri-plugin-opener = "2"
+
+serde = { workspace = true }
+serde_json = { workspace = true }
+thiserror = { workspace = true }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }
+tracing-appender = "0.2"
+tokio = { workspace = true }
+parking_lot = { workspace = true }
+anyhow = { workspace = true }
+dirs = { workspace = true }
+base64 = "0.22"
+toml = { workspace = true }
+once_cell = { workspace = true }
+
+pf_core = { workspace = true }
+pf_ai = { workspace = true }
+pf_vector = { workspace = true }
+pf_database = { workspace = true }
+pf_task = { workspace = true }
+pf_config = { workspace = true }
+pf_platform = { workspace = true }
+pf_application = { workspace = true }
+pf_tauri_ipc = { workspace = true }
+
+[features]
+default = ["custom-protocol"]
+custom-protocol = ["tauri/custom-protocol"]
+
+[lints.clippy]
+disallowed_methods = "deny"

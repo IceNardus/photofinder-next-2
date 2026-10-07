@@ -1,0 +1,32 @@
+[package]
+name = "pf_platform"
+version = "0.1.0"
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+description = "PhotoFinder Next 2 — 平台抽象（PhotoProvider trait + Desktop/Android/iOS impl）"
+
+[dependencies]
+serde = { workspace = true }
+thiserror = { workspace = true }
+async-trait = { workspace = true }
+chrono = { workspace = true }
+tracing = { workspace = true }
+walkdir = { workspace = true }
+image = { workspace = true }
+parking_lot = { workspace = true }
+tokio = { workspace = true }
+# iOS bridge needs libc::free for Swift-side strdup'd strings
+libc = "0.2"
+serde_json = { workspace = true }
+
+# `dirs` 仅桌面端使用（移动端走标准沙箱 / Context.getFilesDir()）
+[target.'cfg(not(any(target_os = "android", target_os = "ios")))'.dependencies]
+dirs = { workspace = true }
+
+[dev-dependencies]
+tempfile = "3"
+tokio = { workspace = true }
+
+[lints.clippy]
+disallowed_methods = "deny"

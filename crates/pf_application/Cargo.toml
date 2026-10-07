@@ -1,0 +1,30 @@
+[package]
+name = "pf_application"
+version = "0.1.0"
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+description = "PhotoFinder Next 2 — 业务编排（唯一允许 cross-crate 调用）"
+
+[dependencies]
+serde = { workspace = true }
+serde_json = { workspace = true }
+thiserror = { workspace = true }
+async-trait = { workspace = true }
+chrono = { workspace = true }
+tracing = { workspace = true }
+tokio = { workspace = true }
+parking_lot = { workspace = true }
+image = { workspace = true }
+pf_core = { workspace = true }
+pf_ai = { workspace = true }
+pf_vector = { workspace = true }
+pf_database = { workspace = true }
+pf_task = { workspace = true }
+pf_config = { workspace = true }
+pf_platform = { workspace = true }
+rusqlite = { workspace = true }
+blake3 = { workspace = true }
+
+[lints.clippy]
+disallowed_methods = "deny"

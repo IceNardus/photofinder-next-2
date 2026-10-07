@@ -1,0 +1,105 @@
+# xcodegen project spec for the PhotoFinder Next iOS app layer.
+# Generate with: xcodegen generate   (requires `brew install xcodegen`)
+#
+# SwiftUI native shell + Rust staticlib (libpf_ios_bridge.a) from the
+# `apps/ios-bridge` workspace member. The preBuildScript below builds the
+# staticlib for the active iOS target before xcodebuild runs, then xcodebuild
+# links it via LIBRARY_SEARCH_PATHS.
+#
+# Layout reminder:
+#   $WORKSPACE_ROOT = apps/ios/../../..
+#   $WORKSPACE_ROOT/target/aarch64-apple-ios(-sim)/<CONFIGURATION>/libpf_ios_bridge.a
+#
+# Symbol flow at app link time:
+#   1. Rust staticlib has unresolved extern "C" refs (intentional — Rust can't
+#      link Swift symbols).
+#   2. pf_ios_shim.c (part of this Xcode target) provides weak NULL stubs so
+#      link succeeds.
+#   3. PhotoKitBridge.swift (@_cdecl) provides strong overrides; weak/strong
+#      dyld rules make the Swift definitions win at runtime.
+name: photofinder_desktop
+options:
+  bundleIdPrefix: com.photofinder.next
+  deploymentTarget:
+    iOS: "16.0"
+settings:
+  base:
+    PRODUCT_NAME: PhotoFinder Next
+    PRODUCT_BUNDLE_IDENTIFIER: com.photofinder.next
+targets:
+  photofinder_desktop_iOS:
+    type: application
+    platform: iOS
+    sources:
+      - path: Sources
+      - path: Assets.xcassets
+      - path: LaunchScreen.storyboard
+    info:
+      path: Sources/photofinder_desktop/Info.plist
+    entitlements:
+      path: Sources/photofinder_desktop/PhotoFinderNext.entitlements
+    settings:
+      base:
+        ENABLE_BITCODE: false
+        ENABLE_DEBUG_DYLIB: false
+        ARCHS: [arm64]
+        VALID_ARCHS: arm64
+        # Only the active platform's staticlib is on the search path. The
+        # preBuildScript below writes it to target/ios-active/<CONFIG>/<PLATFORM>/
+        # where <PLATFORM> is $(EFFECTIVE_PLATFORM_NAME) — already prefixed with
+        # a leading dash (-iphoneos / -iphonesimulator), matching the same
+        # convention the preBuildScript uses.
+        LIBRARY_SEARCH_PATHS:
+          - "$(inherited)"
+          - "$(SRCROOT)/../../target/ios-active/$(CONFIGURATION)/$(EFFECTIVE_PLATFORM_NAME)"
+        OTHER_LDFLAGS:
+          - "-lpf_ios_bridge"
+    dependencies:
+      - sdk: CoreGraphics.framework
+      - sdk: Foundation.framework
+      - sdk: Metal.framework
+      - sdk: QuartzCore.framework
+      - sdk: Security.framework
+      - sdk: UIKit.framework
+      - sdk: Photos.framework
+      - sdk: BackgroundTasks.framework
+    preBuildScripts:
+      - name: "Build libpf_ios_bridge.a staticlib"
+        script: |
+          # Build the Rust staticlib for the active iOS target before xcodebuild
+          # links. The pre-compiled .a lands in a target/ios-active/$(CONFIGURATION)/
+          # path shared by both device + sim, so the Xcode linker's
+          # LIBRARY_SEARCH_PATHS stack can reference a single stable path
+          # regardless of which SDK is active.
+          set -e
+          echo "[build-pf_ios_bridge] SRCROOT=$SRCROOT EFFECTIVE_PLATFORM_NAME=$EFFECTIVE_PLATFORM_NAME CONFIGURATION=$CONFIGURATION"
+          case "$EFFECTIVE_PLATFORM_NAME" in
+            *iphonesimulator*)
+              TARGET="aarch64-apple-ios-sim"
+              ;;
+            *iphoneos*)
+              TARGET="aarch64-apple-ios"
+              ;;
+            *)
+              echo "[build-pf_ios_bridge] unknown EFFECTIVE_PLATFORM_NAME=$EFFECTIVE_PLATFORM_NAME — defaulting to aarch64-apple-ios-sim"
+              TARGET="aarch64-apple-ios-sim"
+              ;;
+          esac
+          ACTIVE_DIR="$SRCROOT/../../target/ios-active/$CONFIGURATION/$EFFECTIVE_PLATFORM_NAME"
+          mkdir -p "$ACTIVE_DIR"
+          ACTIVE_LIB="$ACTIVE_DIR/libpf_ios_bridge.a"
+          NATIVE_DIR="$SRCROOT/../../target/$TARGET/$CONFIGURATION"
+          NATIVE_LIB="$NATIVE_DIR/libpf_ios_bridge.a"
+          if [ -f "$ACTIVE_LIB" ] && [ "$SRCROOT/Sources/photofinder_desktop/pf_ios_shim.c" -ot "$ACTIVE_LIB" ]; then
+            echo "[build-pf_ios_bridge] staticlib up-to-date at $ACTIVE_LIB"
+          else
+            mkdir -p "$NATIVE_DIR"
+            echo "[build-pf_ios_bridge] cargo build --target $TARGET -p pf_ios_bridge"
+            (cd "$SRCROOT/../.." && cargo build --target "$TARGET" -p pf_ios_bridge)
+            # Copy (not symlink — Xcode's linker doesn't always follow symlinks
+            # in staticlib resolution) into the shared path.
+            cp "$NATIVE_LIB" "$ACTIVE_LIB"
+            echo "[build-pf_ios_bridge] copied to $ACTIVE_LIB"
+          fi
+        outputFiles:
+          - "$(DERIVED_FILE_DIR)/build-pf_ios_bridge.marker"

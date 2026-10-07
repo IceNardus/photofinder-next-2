@@ -1,0 +1,26 @@
+[package]
+name = "pf_task"
+version = "0.1.0"
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+description = "PhotoFinder Next 2 — 后台任务系统（队列 + 调度 + 取消 + 进度）"
+
+[dependencies]
+serde = { workspace = true }
+serde_json = { workspace = true }
+thiserror = { workspace = true }
+chrono = { workspace = true }
+async-trait = { workspace = true }
+tracing = { workspace = true }
+uuid = { workspace = true }
+parking_lot = { workspace = true }
+once_cell = { workspace = true }
+pf_database = { workspace = true }
+tokio = { workspace = true }
+
+[lints.clippy]
+disallowed_methods = "deny"
+
+[dev-dependencies]
+tempfile = "3"

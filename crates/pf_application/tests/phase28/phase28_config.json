@@ -1,0 +1,14 @@
+{
+  "scrfd_input_size": 640,
+  "scrfd_min_confidence": 0.3,
+  "scrfd_nms_iou_threshold": 0.4,
+  "min_face_w_h": 16.0,
+  "align_scale": 1.25,
+  "align_y_offset": -10.0,
+  "arcface_input_size": 112,
+  "arcface_bgr_norm": "(pixel - 127.5) / 128.0",
+  "tta_flip": false,
+  "tta_rotation": false,
+  "tta_variants": 1,
+  "embedding_dim": 512
+}

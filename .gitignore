@@ -1,0 +1,60 @@
+# Build artifacts
+target/
+build/
+dist/
+*.o
+*.a
+*.so
+*.dylib
+
+# Flutter build
+.flutter-plugins
+.flutter-plugins-dependencies
+.dart_tool/
+.packages
+.pub-cache/
+.pub/
+*.lock
+
+# iOS/Android specific
+ios/Pods/
+ios/.symlinks/
+ios/Flutter/Flutter.framework/
+ios/Flutter/Flutter.podspec
+ios/Flutter/Generated.xcconfig
+ios/Flutter/app.flx
+ios/Flutter/app.zip
+ios/Flutter/flutter_assets/
+android/.gradle/
+android/app/build/
+android/build/
+android/app/*.apk
+android/app/*.aab
+
+# ONNX models (use Git LFS)
+*.onnx
+
+# Database files
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+
+# OS files
+.DS_Store
+Thumbs.db
+*~
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+*.tmp
+*.swp
+*~

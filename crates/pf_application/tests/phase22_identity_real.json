@@ -1,0 +1,75 @@
+{
+  "dataset_verdict": "CHECK_DATASET",
+  "face_verdict": "EXPERIMENTAL",
+  "body_verdict": "EXPERIMENTAL",
+  "fusion_verdict": "EXPERIMENTAL",
+  "face_verification": {
+    "auc": 0.9391,
+    "eer": 0.1206,
+    "far_at_01": 0.0000,
+    "far_at_05": 0.0000,
+    "far_at_1": 0.0000,
+    "far_at_5": 0.0000,
+    "frr": 0.9986
+  },
+  "face_identification": {
+    "top1": 0.9131,
+    "top3": 0.9471,
+    "top5": 0.9610,
+    "top10": 0.9824
+  },
+  "face_margin": {
+    "positive_best": 0.2991,
+    "positive_mean": 0.2690,
+    "positive_min": -0.5627,
+    "negative_max": 0.7163,
+    "median": 0.2991,
+    "p10": -0.0033,
+    "p25": 0.1593,
+    "p50": 0.2991,
+    "p75": 0.4100,
+    "p90": 0.4888
+  },
+  "face_loo": {
+    "pass_rate": 0.8996
+  },
+  "body_verification": {
+    "auc": 0.0000,
+    "eer": 0.5000,
+    "far_at_01": 0.0000,
+    "far_at_05": 0.0000,
+    "far_at_1": 0.0000,
+    "far_at_5": 0.0000,
+    "frr": 1.0000
+  },
+  "body_identification": {
+    "top1": 0.0000,
+    "top3": 0.0000,
+    "top5": 0.0000,
+    "top10": 0.0000
+  },
+  "body_loo": {
+    "pass_rate": 0.0000
+  },
+  "false_merge_analysis": {
+    "face_false_merges": 29,
+    "body_false_merges": 0,
+    "fusion_false_merges": 0,
+    "total_pairs": 435,
+    "face_false_merge_rate": 0.066667,
+    "body_false_merge_rate": 0.000000,
+    "fusion_false_merge_rate": 0.000000
+  },
+  "chain_contamination": [
+    { "steps": 1, "detected": false, "margin_a_b": 0.2152, "margin_b_c": -0.0218, "margin_c_d": 0.0235, "margin_a_d": 0.1404 },
+    { "steps": 2, "detected": false, "margin_a_b": 0.2152, "margin_b_c": -0.0218, "margin_c_d": 0.0235, "margin_a_d": 0.1404 },
+    { "steps": 5, "detected": false, "margin_a_b": 0.2152, "margin_b_c": -0.0218, "margin_c_d": 0.0235, "margin_a_d": 0.1404 },
+    { "steps": 10, "detected": false, "margin_a_b": 0.2152, "margin_b_c": -0.0218, "margin_c_d": 0.0235, "margin_a_d": 0.1404 },
+    { "steps": 20, "detected": false, "margin_a_b": 0.2152, "margin_b_c": -0.0218, "margin_c_d": 0.0235, "margin_a_d": 0.1404 }
+  ],
+  "anti_chaining": {
+    "ambiguous_pairs": 854,
+    "total_pairs": 966,
+    "ambiguous_rate": 0.8841
+  }
+}

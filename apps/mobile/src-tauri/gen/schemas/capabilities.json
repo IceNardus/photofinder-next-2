@@ -1,0 +1,1 @@
+{"default":{"identifier":"default","description":"Default capability for the main window — all PhotoFinder commands. Mobile uses native pickers (UIImagePickerController / ACTION_PICK), not Tauri dialog plugin.","local":true,"windows":["main"],"permissions":["core:default","core:window:default","core:event:default","core:webview:default","core:app:default","core:path:default"]}}

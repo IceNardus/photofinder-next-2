@@ -1,0 +1,44 @@
+[package]
+name = "photofinder-mobile"
+version = "0.1.0"
+description = "PhotoFinder Next 2 — Mobile shell (iOS + Android, Tauri 2)"
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+[lib]
+name = "photofinder_mobile"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[[bin]]
+name = "photofinder-mobile"
+path = "src/main.rs"
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+# PhotoFinder crates
+pf_core = { workspace = true }
+pf_platform = { workspace = true }
+pf_database = { workspace = true }
+pf_vector = { workspace = true }
+pf_ai = { workspace = true }
+pf_task = { workspace = true }
+pf_config = { workspace = true }
+pf_application = { workspace = true }
+pf_tauri_ipc = { workspace = true }
+
+# Tauri
+tauri = { version = "2", features = [] }
+
+# Misc
+serde = { workspace = true }
+serde_json = { workspace = true }
+thiserror = { workspace = true }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }
+tracing-appender = "0.2"
+tokio = { workspace = true }
+anyhow = { workspace = true }
+once_cell = { workspace = true }

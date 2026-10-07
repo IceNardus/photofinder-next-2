@@ -1,0 +1,35 @@
+[package]
+name = "pf_ios_bridge"
+version = "0.1.0"
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+description = "PhotoFinder Next 2 — iOS C ABI bridge (Swift ↔ Rust)"
+
+# staticlib 让 Xcode 把这个 crate 链进 iOS app；
+# rlib 让 cargo check 能跑（非 iOS target 时也编译但只导出 stub）。
+[lib]
+name = "pf_ios_bridge"
+crate-type = ["staticlib", "rlib"]
+
+[dependencies]
+pf_core = { workspace = true }
+pf_ai = { workspace = true }
+pf_database = { workspace = true }
+pf_vector = { workspace = true }
+pf_platform = { workspace = true }
+pf_application = { workspace = true }
+pf_config = { workspace = true }
+
+serde = { workspace = true }
+serde_json = { workspace = true }
+thiserror = { workspace = true }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }
+tracing-appender = "0.2"
+tokio = { workspace = true }
+parking_lot = { workspace = true }
+once_cell = { workspace = true }
+anyhow = { workspace = true }
+libc = "0.2"
+toml = { workspace = true }

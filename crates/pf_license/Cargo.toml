@@ -1,0 +1,26 @@
+[package]
+name = "pf_license"
+version = "0.1.0"
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+description = "PhotoFinder Next 2 — License and account management"
+
+[dependencies]
+serde = { workspace = true }
+thiserror = { workspace = true }
+rusqlite = { workspace = true }
+r2d2 = { workspace = true }
+r2d2_sqlite = { workspace = true }
+tracing = { workspace = true }
+pf_database = { workspace = true }
+pf_core = { workspace = true }
+tokio = { workspace = true }
+sha2 = { workspace = true }
+parking_lot = { workspace = true }
+
+[dev-dependencies]
+tempfile = "3"
+
+[lints.clippy]
+disallowed_methods = "deny"

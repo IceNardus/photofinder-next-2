@@ -1,0 +1,40 @@
+# iOS platform
+platform :ios, '15.0'
+
+# Xcode workspace
+workspace 'Runner.xcworkspace'
+
+# Local PhotoFinder FFI pod + image_cropper + share_plus
+target 'Runner' do
+  pod 'PhotoFinderFFI', :path => './LocalPods/PhotoFinderFFI'
+  pod 'image_cropper', :path => '/Users/mac/.pub-cache/hosted/pub.dev/image_cropper-5.0.1/ios'
+  pod 'share_plus', :path => '/Users/mac/.pub-cache/hosted/pub.dev/share_plus-7.2.2/ios'
+end
+
+# Global settings
+post_install do |installer|
+  # Set deployment target for all pods
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '15.0'
+    end
+  end
+
+  # Fix Rust static library linking for iOS
+  # CocoaPods vendored_libraries doesn't properly link static libraries with FFI symbols
+  # We need to use -force_load with the full path to prevent dead stripping
+  xcconfig_paths = Dir.glob(File.join(__dir__, 'Pods', 'Target Support Files', 'Pods-Runner', 'Pods-Runner.*.xcconfig'))
+  xcconfig_paths.each do |xcconfig_path|
+    content = File.read(xcconfig_path)
+    # Replace -l"photofinder_flutter_ffi" with -force_load using full path
+    # This forces the linker to include ALL symbols from the Rust library, preventing dead strip
+    modified = content.gsub(
+      /-l"photofinder_flutter_ffi"/,
+      '-force_load "$(PODS_ROOT)/../LocalPods/PhotoFinderFFI/lib/libphotofinder_flutter_ffi.a"'
+    )
+    if modified != content
+      File.write(xcconfig_path, modified)
+      puts "Fixed Rust FFI library linking in #{File.basename(xcconfig_path)}"
+    end
+  end
+end

@@ -1,0 +1,15 @@
+[package]
+name = "pf_core"
+version = "0.1.0"
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+description = "PhotoFinder Next 2 — 业务核心 domain types（不知道任何平台 / AI / DB / 搜索）"
+
+[dependencies]
+serde = { workspace = true }
+thiserror = { workspace = true }
+chrono = { workspace = true }
+
+[lints.clippy]
+disallowed_methods = "deny"

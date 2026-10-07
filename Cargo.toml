@@ -1,0 +1,90 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/pf_core",
+    "crates/pf_ai",
+    "crates/pf_vector",
+    "crates/pf_database",
+    "crates/pf_task",
+    "crates/pf_config",
+    "crates/pf_platform",
+    "crates/pf_application",
+    "crates/pf_tauri_ipc",
+    "crates/pf_application/tests/single_region_retrieval",
+    "apps/desktop/src-tauri",
+    "apps/mobile/src-tauri",
+    "apps/flutter_ios/rust",
+    "scripts",
+]
+
+[workspace.package]
+edition = "2021"
+rust-version = "1.80"
+license = "MIT OR Apache-2.0"
+authors = ["PhotoFinder Next 2 Contributors"]
+repository = "https://github.com/local/photofinder-next-2"
+
+[workspace.dependencies]
+# Core / std
+chrono = { version = "0.4", features = ["serde"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+thiserror = "1.0"
+async-trait = "0.1"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
+# Database
+rusqlite = { version = "0.31", features = ["bundled"] }
+r2d2 = "0.8"
+r2d2_sqlite = "0.24"
+
+# Async
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "sync", "fs", "time"] }
+
+# Image / hashing
+blake3 = "1.5"
+walkdir = "2.4"
+image = { version = "0.25", default-features = false, features = ["jpeg", "png", "webp"] }
+
+# Utilities
+uuid = { version = "1", features = ["v4", "serde"] }
+parking_lot = "0.12"
+anyhow = "1.0"
+toml = "0.8"
+dirs = "5"
+half = { version = "2", features = ["std", "serde"] }
+once_cell = "1"
+ndarray = "0.15"
+sha2 = "0.10"
+
+# ONNX runtime (Phase 1)
+ort = { version = "2.0.0-rc.13", default-features = false, features = ["load-dynamic"] }
+
+# HNSW (Phase 1)
+hnsw_rs = { version = "0.3", default-features = false }
+
+# Image processing
+imageproc = { version = "0.25", default-features = false }
+csv = "1"
+
+# pf_core
+pf_core = { path = "crates/pf_core" }
+pf_ai = { path = "crates/pf_ai" }
+pf_vector = { path = "crates/pf_vector" }
+pf_database = { path = "crates/pf_database" }
+pf_task = { path = "crates/pf_task" }
+pf_config = { path = "crates/pf_config" }
+pf_platform = { path = "crates/pf_platform" }
+pf_application = { path = "crates/pf_application" }
+pf_tauri_ipc = { path = "crates/pf_tauri_ipc" }
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+codegen-units = 1
+strip = true
+
+[profile.dev]
+opt-level = 0
+debug = true

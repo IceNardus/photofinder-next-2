@@ -1,0 +1,1201 @@
+{
+  "phase": "25.2",
+  "dataset_summary": {
+    "total_images": 967,
+    "total_persons": 30,
+    "face_available": 966,
+    "body_available": 967,
+    "image_distribution": [
+      {
+        "person_id": 1,
+        "face_images": 19,
+        "body_images": 19
+      },
+      {
+        "person_id": 2,
+        "face_images": 12,
+        "body_images": 12
+      },
+      {
+        "person_id": 3,
+        "face_images": 39,
+        "body_images": 39
+      },
+      {
+        "person_id": 4,
+        "face_images": 35,
+        "body_images": 35
+      },
+      {
+        "person_id": 5,
+        "face_images": 21,
+        "body_images": 21
+      },
+      {
+        "person_id": 6,
+        "face_images": 36,
+        "body_images": 36
+      },
+      {
+        "person_id": 7,
+        "face_images": 15,
+        "body_images": 15
+      },
+      {
+        "person_id": 8,
+        "face_images": 20,
+        "body_images": 20
+      },
+      {
+        "person_id": 9,
+        "face_images": 11,
+        "body_images": 11
+      },
+      {
+        "person_id": 10,
+        "face_images": 12,
+        "body_images": 12
+      },
+      {
+        "person_id": 11,
+        "face_images": 13,
+        "body_images": 13
+      },
+      {
+        "person_id": 12,
+        "face_images": 77,
+        "body_images": 77
+      },
+      {
+        "person_id": 13,
+        "face_images": 42,
+        "body_images": 42
+      },
+      {
+        "person_id": 14,
+        "face_images": 24,
+        "body_images": 24
+      },
+      {
+        "person_id": 15,
+        "face_images": 28,
+        "body_images": 29
+      },
+      {
+        "person_id": 16,
+        "face_images": 17,
+        "body_images": 17
+      },
+      {
+        "person_id": 17,
+        "face_images": 10,
+        "body_images": 10
+      },
+      {
+        "person_id": 18,
+        "face_images": 15,
+        "body_images": 15
+      },
+      {
+        "person_id": 19,
+        "face_images": 14,
+        "body_images": 14
+      },
+      {
+        "person_id": 20,
+        "face_images": 21,
+        "body_images": 21
+      },
+      {
+        "person_id": 21,
+        "face_images": 19,
+        "body_images": 19
+      },
+      {
+        "person_id": 22,
+        "face_images": 11,
+        "body_images": 11
+      },
+      {
+        "person_id": 23,
+        "face_images": 13,
+        "body_images": 13
+      },
+      {
+        "person_id": 24,
+        "face_images": 236,
+        "body_images": 236
+      },
+      {
+        "person_id": 25,
+        "face_images": 11,
+        "body_images": 11
+      },
+      {
+        "person_id": 26,
+        "face_images": 31,
+        "body_images": 31
+      },
+      {
+        "person_id": 27,
+        "face_images": 14,
+        "body_images": 14
+      },
+      {
+        "person_id": 28,
+        "face_images": 14,
+        "body_images": 14
+      },
+      {
+        "person_id": 29,
+        "face_images": 15,
+        "body_images": 15
+      },
+      {
+        "person_id": 30,
+        "face_images": 121,
+        "body_images": 121
+      }
+    ]
+  },
+  "face_loo": {
+    "total_queries": 398,
+    "rank1_rate": 0.0,
+    "rank1_count": 0,
+    "margin_plus_rate": 0.9020100502512562,
+    "margin_plus_count": 359,
+    "threshold_pass_rate": 0.017587939698492462,
+    "threshold_pass_count": 7,
+    "positive_score_stats": {
+      "min": 0.10286008566617966,
+      "p1": 0.185116246342659,
+      "p5": 0.2536577582359314,
+      "p10": 0.3321405351161957,
+      "p25": 0.4573642611503601,
+      "p50": 0.5841724872589111,
+      "p75": 0.6523078083992004,
+      "p90": 0.699427604675293,
+      "p95": 0.7227591872215271,
+      "p99": 0.7549649477005005,
+      "max": 0.7904917001724243,
+      "mean": 0.5468247796984473
+    },
+    "negative_max_stats": {
+      "min": 0.06885242462158203,
+      "p1": 0.12359611690044403,
+      "p5": 0.15414486825466156,
+      "p10": 0.1660078465938568,
+      "p25": 0.20485608279705048,
+      "p50": 0.25357043743133545,
+      "p75": 0.3125094473361969,
+      "p90": 0.38535505533218384,
+      "p95": 0.4444182515144348,
+      "p99": 0.5924100279808044,
+      "max": 0.6633549928665161,
+      "mean": 0.2700260992924772
+    },
+    "margin_stats": {
+      "min": -0.42800459265708923,
+      "p1": -0.36207184195518494,
+      "p5": -0.1730038821697235,
+      "p10": 0.009561538696289062,
+      "p25": 0.18612617254257202,
+      "p50": 0.3261476457118988,
+      "p75": 0.42912590503692627,
+      "p90": 0.48240798711776733,
+      "p95": 0.5113431215286255,
+      "p99": 0.5579957365989685,
+      "max": 0.6154642105102539,
+      "mean": 0.2767986804059702
+    },
+    "per_person": [
+      {
+        "person_id": 28,
+        "images": 14,
+        "rank1_rate": 0.0,
+        "margin_plus_rate": 0.9020100502512562,
+        "threshold_pass_rate": 0.017587939698492462,
+        "median_positive_score": 0.5841724872589111,
+        "median_margin": 0.3261476457118988
+      },
+      {
+        "person_id": 23,
+        "images": 13,
+        "rank1_rate": 0.0,
+        "margin_plus_rate": 0.9020100502512562,
+        "threshold_pass_rate": 0.017587939698492462,
+        "median_positive_score": 0.5841724872589111,
+        "median_margin": 0.3261476457118988
+      },
+      {
+        "person_id": 10,
+        "images": 12,
+        "rank1_rate": 0.0,
+        "margin_plus_rate": 0.9020100502512562,
+        "threshold_pass_rate": 0.017587939698492462,
+        "median_positive_score": 0.5841724872589111,
+        "median_margin": 0.3261476457118988
+      },
+      {
+        "person_id": 14,
+        "images": 24,
+        "rank1_rate": 0.0,
+        "margin_plus_rate": 0.9020100502512562,
+        "threshold_pass_rate": 0.017587939698492462,
+        "median_positive_score": 0.5841724872589111,
+        "median_margin": 0.3261476457118988
+      },
+      {
+        "person_id": 6,
+        "images": 36,
+        "rank1_rate": 0.0,
+        "margin_plus_rate": 0.9020100502512562,
+        "threshold_pass_rate": 0.017587939698492462,
+        "median_positive_score": 0.5841724872589111,
+        "median_margin": 0.3261476457118988
+      },
+      {
+        "person_id": 21,
+        "images": 19,
+        "rank1_rate": 0.0,
+        "margin_plus_rate": 0.9020100502512562,
+        "threshold_pass_rate": 0.017587939698492462,
+        "median_positive_score": 0.5841724872589111,
+        "median_margin": 0.3261476457118988
+      },
+      {
+        "person_id": 4,
+        "images": 35,
+        "rank1_rate": 0.0,
+        "margin_plus_rate": 0.9020100502512562,
+        "threshold_pass_rate": 0.017587939698492462,
+        "median_positive_score": 0.5841724872589111,
+        "median_margin": 0.3261476457118988
+      },
+      {
+        "person_id": 5,
+        "images": 21,
+        "rank1_rate": 0.0,
+        "margin_plus_rate": 0.9020100502512562,
+        "threshold_pass_rate": 0.017587939698492462,
+        "median_positive_score": 0.5841724872589111,
+        "median_margin": 0.3261476457118988
+      },
+      {
+        "person_id": 22,
+        "images": 11,
+        "rank1_rate": 0.0,
+        "margin_plus_rate": 0.9020100502512562,
+        "threshold_pass_rate": 0.017587939698492462,
+        "median_positive_score": 0.5841724872589111,
+        "median_margin": 0.3261476457118988
+      },
+      {
+        "person_id": 24,
+        "images": 236,
+        "rank1_rate": 0.0,
+        "margin_plus_rate": 0.9020100502512562,
+        "threshold_pass_rate": 0.017587939698492462,
+        "median_positive_score": 0.5841724872589111,
+        "median_margin": 0.3261476457118988
+      },
+      {
+        "person_id": 19,
+        "images": 14,
+        "rank1_rate": 0.0,
+        "margin_plus_rate": 0.9020100502512562,
+        "threshold_pass_rate": 0.017587939698492462,
+        "median_positive_score": 0.5841724872589111,
+        "median_margin": 0.3261476457118988
+      },
+      {
+        "person_id": 1,
+        "images": 19,
+        "rank1_rate": 0.0,
+        "margin_plus_rate": 0.9020100502512562,
+        "threshold_pass_rate": 0.017587939698492462,
+        "median_positive_score": 0.5841724872589111,
+        "median_margin": 0.3261476457118988
+      },
+      {
+        "person_id": 11,
+        "images": 13,
+        "rank1_rate": 0.0,
+        "margin_plus_rate": 0.9020100502512562,
+        "threshold_pass_rate": 0.017587939698492462,
+        "median_positive_score": 0.5841724872589111,
+        "median_margin": 0.3261476457118988
+      },
+      {
+        "person_id": 15,
+        "images": 28,
+        "rank1_rate": 0.0,
+        "margin_plus_rate": 0.9020100502512562,
+        "threshold_pass_rate": 0.017587939698492462,
+        "median_positive_score": 0.5841724872589111,
+        "median_margin": 0.3261476457118988
+      },
+      {
+        "person_id": 27,
+        "images": 14,
+        "rank1_rate": 0.0,
+        "margin_plus_rate": 0.9020100502512562,
+        "threshold_pass_rate": 0.017587939698492462,
+        "median_positive_score": 0.5841724872589111,
+        "median_margin": 0.3261476457118988
+      },
+      {
+        "person_id": 12,
+        "images": 77,
+        "rank1_rate": 0.0,
+        "margin_plus_rate": 0.9020100502512562,
+        "threshold_pass_rate": 0.017587939698492462,
+        "median_positive_score": 0.5841724872589111,
+        "median_margin": 0.3261476457118988
+      },
+      {
+        "person_id": 16,
+        "images": 17,
+        "rank1_rate": 0.0,
+        "margin_plus_rate": 0.9020100502512562,
+        "threshold_pass_rate": 0.017587939698492462,
+        "median_positive_score": 0.5841724872589111,
+        "median_margin": 0.3261476457118988
+      },
+      {
+        "person_id": 9,
+        "images": 11,
+        "rank1_rate": 0.0,
+        "margin_plus_rate": 0.9020100502512562,
+        "threshold_pass_rate": 0.017587939698492462,
+        "median_positive_score": 0.5841724872589111,
+        "median_margin": 0.3261476457118988
+      },
+      {
+        "person_id": 20,
+        "images": 21,
+        "rank1_rate": 0.0,
+        "margin_plus_rate": 0.9020100502512562,
+        "threshold_pass_rate": 0.017587939698492462,
+        "median_positive_score": 0.5841724872589111,
+        "median_margin": 0.3261476457118988
+      },
+      {
+        "person_id": 2,
+        "images": 12,
+        "rank1_rate": 0.0,
+        "margin_plus_rate": 0.9020100502512562,
+        "threshold_pass_rate": 0.017587939698492462,
+        "median_positive_score": 0.5841724872589111,
+        "median_margin": 0.3261476457118988
+      },
+      {
+        "person_id": 13,
+        "images": 42,
+        "rank1_rate": 0.0,
+        "margin_plus_rate": 0.9020100502512562,
+        "threshold_pass_rate": 0.017587939698492462,
+        "median_positive_score": 0.5841724872589111,
+        "median_margin": 0.3261476457118988
+      },
+      {
+        "person_id": 17,
+        "images": 10,
+        "rank1_rate": 0.0,
+        "margin_plus_rate": 0.9020100502512562,
+        "threshold_pass_rate": 0.017587939698492462,
+        "median_positive_score": 0.5841724872589111,
+        "median_margin": 0.3261476457118988
+      },
+      {
+        "person_id": 30,
+        "images": 121,
+        "rank1_rate": 0.0,
+        "margin_plus_rate": 0.9020100502512562,
+        "threshold_pass_rate": 0.017587939698492462,
+        "median_positive_score": 0.5841724872589111,
+        "median_margin": 0.3261476457118988
+      },
+      {
+        "person_id": 26,
+        "images": 31,
+        "rank1_rate": 0.0,
+        "margin_plus_rate": 0.9020100502512562,
+        "threshold_pass_rate": 0.017587939698492462,
+        "median_positive_score": 0.5841724872589111,
+        "median_margin": 0.3261476457118988
+      },
+      {
+        "person_id": 7,
+        "images": 15,
+        "rank1_rate": 0.0,
+        "margin_plus_rate": 0.9020100502512562,
+        "threshold_pass_rate": 0.017587939698492462,
+        "median_positive_score": 0.5841724872589111,
+        "median_margin": 0.3261476457118988
+      },
+      {
+        "person_id": 18,
+        "images": 15,
+        "rank1_rate": 0.0,
+        "margin_plus_rate": 0.9020100502512562,
+        "threshold_pass_rate": 0.017587939698492462,
+        "median_positive_score": 0.5841724872589111,
+        "median_margin": 0.3261476457118988
+      },
+      {
+        "person_id": 25,
+        "images": 11,
+        "rank1_rate": 0.0,
+        "margin_plus_rate": 0.9020100502512562,
+        "threshold_pass_rate": 0.017587939698492462,
+        "median_positive_score": 0.5841724872589111,
+        "median_margin": 0.3261476457118988
+      },
+      {
+        "person_id": 8,
+        "images": 20,
+        "rank1_rate": 0.0,
+        "margin_plus_rate": 0.9020100502512562,
+        "threshold_pass_rate": 0.017587939698492462,
+        "median_positive_score": 0.5841724872589111,
+        "median_margin": 0.3261476457118988
+      },
+      {
+        "person_id": 29,
+        "images": 15,
+        "rank1_rate": 0.0,
+        "margin_plus_rate": 0.9020100502512562,
+        "threshold_pass_rate": 0.017587939698492462,
+        "median_positive_score": 0.5841724872589111,
+        "median_margin": 0.3261476457118988
+      },
+      {
+        "person_id": 3,
+        "images": 39,
+        "rank1_rate": 0.0,
+        "margin_plus_rate": 0.9020100502512562,
+        "threshold_pass_rate": 0.017587939698492462,
+        "median_positive_score": 0.5841724872589111,
+        "median_margin": 0.3261476457118988
+      }
+    ]
+  },
+  "body_loo": {
+    "total_queries": 398,
+    "rank1_rate": 0.0,
+    "rank1_count": 0,
+    "margin_plus_rate": 0.6005025125628141,
+    "margin_plus_count": 239,
+    "threshold_pass_rate": 0.2989949748743719,
+    "threshold_pass_count": 119,
+    "positive_score_stats": {
+      "min": 0.37604743242263794,
+      "p1": 0.4014054238796234,
+      "p5": 0.48280879855155945,
+      "p10": 0.5245445966720581,
+      "p25": 0.5959425568580627,
+      "p50": 0.6579143404960632,
+      "p75": 0.7105449438095093,
+      "p90": 0.7494391202926636,
+      "p95": 0.7739571332931519,
+      "p99": 0.8060474395751953,
+      "max": 0.8263120651245117,
+      "mean": 0.6466467298155454
+    },
+    "negative_max_stats": {
+      "min": 0.43263664841651917,
+      "p1": 0.47935402393341064,
+      "p5": 0.5216819643974304,
+      "p10": 0.542058527469635,
+      "p25": 0.598411500453949,
+      "p50": 0.6497892737388611,
+      "p75": 0.688985288143158,
+      "p90": 0.7220864295959473,
+      "p95": 0.7434448599815369,
+      "p99": 0.7730869054794312,
+      "max": 0.7927029728889465,
+      "mean": 0.639567148595599
+    },
+    "margin_stats": {
+      "min": -0.22848257422447205,
+      "p1": -0.14536336064338684,
+      "p5": -0.09278780221939087,
+      "p10": -0.06862878799438477,
+      "p25": -0.0323023796081543,
+      "p50": 0.01288294792175293,
+      "p75": 0.046206116676330566,
+      "p90": 0.0805850625038147,
+      "p95": 0.09410244226455688,
+      "p99": 0.13140088319778442,
+      "max": 0.19571757316589355,
+      "mean": 0.0070795812199463196
+    },
+    "per_person": []
+  },
+  "face_pairwise": {
+    "positive_scores": {
+      "min": -0.07351095229387283,
+      "p1": 0.014969716779887676,
+      "p5": 0.07390245050191879,
+      "p10": 0.12255766987800598,
+      "p25": 0.23208464682102203,
+      "p50": 0.35725608468055725,
+      "p75": 0.46327582001686096,
+      "p90": 0.5454292297363281,
+      "p95": 0.592185914516449,
+      "p99": 0.6764113306999207,
+      "max": 0.9036458134651184,
+      "mean": 0.347167269755983
+    },
+    "negative_scores": {
+      "min": -0.21316350996494293,
+      "p1": -0.09021738171577454,
+      "p5": -0.047283194959163666,
+      "p10": -0.02469850890338421,
+      "p25": 0.013765882700681686,
+      "p50": 0.05838111788034439,
+      "p75": 0.10782968252897263,
+      "p90": 0.1626647561788559,
+      "p95": 0.204414501786232,
+      "p99": 0.32067644596099854,
+      "max": 0.8811076879501343,
+      "mean": 0.06625267683422838
+    },
+    "separation": {
+      "overlap_ratio": 0.036225465056646,
+      "decile_separation": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ]
+    }
+  },
+  "body_pairwise": {
+    "positive_scores": {
+      "min": 0.03569561988115311,
+      "p1": 0.18456494808197021,
+      "p5": 0.26849931478500366,
+      "p10": 0.31297531723976135,
+      "p25": 0.3839242160320282,
+      "p50": 0.4577849209308624,
+      "p75": 0.5298758149147034,
+      "p90": 0.5923643708229065,
+      "p95": 0.6293506622314453,
+      "p99": 0.698302149772644,
+      "max": 0.8916675448417664,
+      "mean": 0.45491875036905194
+    },
+    "negative_scores": {
+      "min": -0.09179730713367462,
+      "p1": 0.09287330508232117,
+      "p5": 0.16322453320026398,
+      "p10": 0.20223939418792725,
+      "p25": 0.26886364817619324,
+      "p50": 0.34442269802093506,
+      "p75": 0.42105481028556824,
+      "p90": 0.48936983942985535,
+      "p95": 0.528678834438324,
+      "p99": 0.6008328199386597,
+      "max": 0.7706289291381836,
+      "mean": 0.34513242248572884
+    },
+    "separation": {
+      "overlap_ratio": 0.15563114486743396,
+      "decile_separation": [
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ]
+    }
+  },
+  "prototype_dilution": {
+    "face_results": [
+      {
+        "k": 1,
+        "rank1_rate": 0.0,
+        "margin_plus_rate": 0.5050251256281407,
+        "median_margin": 0.0027637481689453125,
+        "p10_margin": -0.17429713904857635
+      },
+      {
+        "k": 3,
+        "rank1_rate": 0.0,
+        "margin_plus_rate": 0.8492462311557789,
+        "median_margin": 0.1776825487613678,
+        "p10_margin": -0.06059814989566803
+      },
+      {
+        "k": 5,
+        "rank1_rate": 0.0,
+        "margin_plus_rate": 0.8768844221105527,
+        "median_margin": 0.23174640536308289,
+        "p10_margin": -0.025358587503433228
+      },
+      {
+        "k": 10,
+        "rank1_rate": 0.0,
+        "margin_plus_rate": 0.8768844221105527,
+        "median_margin": 0.27807602286338806,
+        "p10_margin": -0.022724509239196777
+      },
+      {
+        "k": 20,
+        "rank1_rate": 0.0,
+        "margin_plus_rate": 0.9045226130653267,
+        "median_margin": 0.31136447191238403,
+        "p10_margin": 0.014515221118927002
+      }
+    ],
+    "body_results": [
+      {
+        "k": 1,
+        "rank1_rate": 0.0,
+        "margin_plus_rate": 0.020100502512562814,
+        "median_margin": -0.22619813680648804,
+        "p10_margin": -0.35038653016090393
+      },
+      {
+        "k": 3,
+        "rank1_rate": 0.0,
+        "margin_plus_rate": 0.09547738693467336,
+        "median_margin": -0.09710240364074707,
+        "p10_margin": -0.2086576223373413
+      },
+      {
+        "k": 5,
+        "rank1_rate": 0.0,
+        "margin_plus_rate": 0.20603015075376885,
+        "median_margin": -0.06234920024871826,
+        "p10_margin": -0.1492888629436493
+      },
+      {
+        "k": 10,
+        "rank1_rate": 0.0,
+        "margin_plus_rate": 0.32914572864321606,
+        "median_margin": -0.03253006935119629,
+        "p10_margin": -0.11408942937850952
+      },
+      {
+        "k": 20,
+        "rank1_rate": 0.0,
+        "margin_plus_rate": 0.4623115577889447,
+        "median_margin": -0.005886495113372803,
+        "p10_margin": -0.08152550458908081
+      }
+    ]
+  },
+  "multi_prototype": {
+    "face_results": [],
+    "body_results": []
+  },
+  "failure_cases": {
+    "face_failures": [
+      {
+        "person_id": 1,
+        "image_id": 341,
+        "positive_score": 0.7020877003669739,
+        "best_negative_person": 0,
+        "best_negative_score": 0.183566153049469,
+        "margin": 0.5185215473175049,
+        "correct_rank": 999,
+        "face_quality": 1.0,
+        "detection_score": 0.85056853,
+        "failure_type": "rank_failure"
+      },
+      {
+        "person_id": 1,
+        "image_id": 343,
+        "positive_score": 0.610925555229187,
+        "best_negative_person": 0,
+        "best_negative_score": 0.16090542078018188,
+        "margin": 0.4500201344490051,
+        "correct_rank": 999,
+        "face_quality": 1.0,
+        "detection_score": 0.84292847,
+        "failure_type": "rank_failure"
+      },
+      {
+        "person_id": 1,
+        "image_id": 346,
+        "positive_score": 0.6655980348587036,
+        "best_negative_person": 0,
+        "best_negative_score": 0.18947941064834595,
+        "margin": 0.47611862421035767,
+        "correct_rank": 999,
+        "face_quality": 1.0,
+        "detection_score": 0.77770454,
+        "failure_type": "rank_failure"
+      },
+      {
+        "person_id": 1,
+        "image_id": 337,
+        "positive_score": 0.5544459223747253,
+        "best_negative_person": 0,
+        "best_negative_score": 0.15233518183231354,
+        "margin": 0.402110755443573,
+        "correct_rank": 999,
+        "face_quality": 1.0,
+        "detection_score": 0.83772177,
+        "failure_type": "rank_failure"
+      },
+      {
+        "person_id": 1,
+        "image_id": 338,
+        "positive_score": 0.5062494874000549,
+        "best_negative_person": 0,
+        "best_negative_score": 0.2641816735267639,
+        "margin": 0.24206781387329102,
+        "correct_rank": 999,
+        "face_quality": 1.0,
+        "detection_score": 0.8213217,
+        "failure_type": "rank_failure"
+      },
+      {
+        "person_id": 1,
+        "image_id": 335,
+        "positive_score": 0.44020718336105347,
+        "best_negative_person": 0,
+        "best_negative_score": 0.2455422580242157,
+        "margin": 0.19466492533683777,
+        "correct_rank": 999,
+        "face_quality": 1.0,
+        "detection_score": 0.8328828,
+        "failure_type": "rank_failure"
+      },
+      {
+        "person_id": 1,
+        "image_id": 332,
+        "positive_score": 0.3173021078109741,
+        "best_negative_person": 0,
+        "best_negative_score": 0.156378835439682,
+        "margin": 0.16092327237129211,
+        "correct_rank": 999,
+        "face_quality": 1.0,
+        "detection_score": 0.83559585,
+        "failure_type": "rank_failure"
+      },
+      {
+        "person_id": 1,
+        "image_id": 330,
+        "positive_score": 0.38574573397636414,
+        "best_negative_person": 0,
+        "best_negative_score": 0.31311848759651184,
+        "margin": 0.0726272463798523,
+        "correct_rank": 999,
+        "face_quality": 1.0,
+        "detection_score": 0.81274104,
+        "failure_type": "rank_failure"
+      },
+      {
+        "person_id": 1,
+        "image_id": 331,
+        "positive_score": 0.5344011783599854,
+        "best_negative_person": 0,
+        "best_negative_score": 0.15431979298591614,
+        "margin": 0.3800813853740692,
+        "correct_rank": 999,
+        "face_quality": 1.0,
+        "detection_score": 0.81126636,
+        "failure_type": "rank_failure"
+      },
+      {
+        "person_id": 1,
+        "image_id": 336,
+        "positive_score": 0.5535253286361694,
+        "best_negative_person": 0,
+        "best_negative_score": 0.27017611265182495,
+        "margin": 0.2833492159843445,
+        "correct_rank": 999,
+        "face_quality": 1.0,
+        "detection_score": 0.83112586,
+        "failure_type": "rank_failure"
+      },
+      {
+        "person_id": 1,
+        "image_id": 339,
+        "positive_score": 0.5364368557929993,
+        "best_negative_person": 0,
+        "best_negative_score": 0.15783654153347015,
+        "margin": 0.3786002993583679,
+        "correct_rank": 999,
+        "face_quality": 1.0,
+        "detection_score": 0.82638437,
+        "failure_type": "rank_failure"
+      },
+      {
+        "person_id": 1,
+        "image_id": 334,
+        "positive_score": 0.6117461919784546,
+        "best_negative_person": 0,
+        "best_negative_score": 0.19401167333126068,
+        "margin": 0.4177345037460327,
+        "correct_rank": 999,
+        "face_quality": 1.0,
+        "detection_score": 0.8252641,
+        "failure_type": "rank_failure"
+      },
+      {
+        "person_id": 1,
+        "image_id": 333,
+        "positive_score": 0.47074759006500244,
+        "best_negative_person": 0,
+        "best_negative_score": 0.14430060982704163,
+        "margin": 0.3264469802379608,
+        "correct_rank": 999,
+        "face_quality": 1.0,
+        "detection_score": 0.82085305,
+        "failure_type": "rank_failure"
+      },
+      {
+        "person_id": 1,
+        "image_id": 342,
+        "positive_score": 0.471670001745224,
+        "best_negative_person": 0,
+        "best_negative_score": 0.2833060622215271,
+        "margin": 0.1883639395236969,
+        "correct_rank": 999,
+        "face_quality": 1.0,
+        "detection_score": 0.7783038,
+        "failure_type": "rank_failure"
+      },
+      {
+        "person_id": 1,
+        "image_id": 340,
+        "positive_score": 0.5369346737861633,
+        "best_negative_person": 0,
+        "best_negative_score": 0.45677247643470764,
+        "margin": 0.08016219735145569,
+        "correct_rank": 999,
+        "face_quality": 1.0,
+        "detection_score": 0.86344045,
+        "failure_type": "rank_failure"
+      },
+      {
+        "person_id": 1,
+        "image_id": 344,
+        "positive_score": 0.43087729811668396,
+        "best_negative_person": 0,
+        "best_negative_score": 0.3596000373363495,
+        "margin": 0.07127726078033447,
+        "correct_rank": 999,
+        "face_quality": 1.0,
+        "detection_score": 0.7968067,
+        "failure_type": "rank_failure"
+      },
+      {
+        "person_id": 1,
+        "image_id": 345,
+        "positive_score": 0.63772052526474,
+        "best_negative_person": 0,
+        "best_negative_score": 0.3687492311000824,
+        "margin": 0.2689712941646576,
+        "correct_rank": 999,
+        "face_quality": 1.0,
+        "detection_score": 0.8281744,
+        "failure_type": "rank_failure"
+      },
+      {
+        "person_id": 1,
+        "image_id": 329,
+        "positive_score": 0.5215460062026978,
+        "best_negative_person": 0,
+        "best_negative_score": 0.36515653133392334,
+        "margin": 0.15638947486877441,
+        "correct_rank": 999,
+        "face_quality": 1.0,
+        "detection_score": 0.8098234,
+        "failure_type": "rank_failure"
+      },
+      {
+        "person_id": 1,
+        "image_id": 328,
+        "positive_score": 0.313208669424057,
+        "best_negative_person": 0,
+        "best_negative_score": 0.26156699657440186,
+        "margin": 0.05164167284965515,
+        "correct_rank": 999,
+        "face_quality": 1.0,
+        "detection_score": 0.8270489,
+        "failure_type": "rank_failure"
+      },
+      {
+        "person_id": 2,
+        "image_id": 102,
+        "positive_score": 0.6309089064598083,
+        "best_negative_person": 0,
+        "best_negative_score": 0.1867487132549286,
+        "margin": 0.44416019320487976,
+        "correct_rank": 999,
+        "face_quality": 1.0,
+        "detection_score": 0.80758584,
+        "failure_type": "rank_failure"
+      }
+    ],
+    "body_failures": [
+      {
+        "person_id": 1,
+        "image_id": 341,
+        "positive_score": 0.7232114672660828,
+        "best_negative_person": 0,
+        "best_negative_score": 0.5274938941001892,
+        "margin": 0.19571757316589355,
+        "correct_rank": 999,
+        "face_quality": null,
+        "detection_score": null,
+        "failure_type": "rank_failure"
+      },
+      {
+        "person_id": 1,
+        "image_id": 343,
+        "positive_score": 0.7356206774711609,
+        "best_negative_person": 0,
+        "best_negative_score": 0.5429942607879639,
+        "margin": 0.19262641668319702,
+        "correct_rank": 999,
+        "face_quality": null,
+        "detection_score": null,
+        "failure_type": "rank_failure"
+      },
+      {
+        "person_id": 1,
+        "image_id": 346,
+        "positive_score": 0.7251550555229187,
+        "best_negative_person": 0,
+        "best_negative_score": 0.6223725080490112,
+        "margin": 0.10278254747390747,
+        "correct_rank": 999,
+        "face_quality": null,
+        "detection_score": null,
+        "failure_type": "rank_failure"
+      },
+      {
+        "person_id": 1,
+        "image_id": 337,
+        "positive_score": 0.6979576349258423,
+        "best_negative_person": 0,
+        "best_negative_score": 0.5861983299255371,
+        "margin": 0.11175930500030518,
+        "correct_rank": 999,
+        "face_quality": null,
+        "detection_score": null,
+        "failure_type": "rank_failure"
+      },
+      {
+        "person_id": 1,
+        "image_id": 338,
+        "positive_score": 0.6162427067756653,
+        "best_negative_person": 0,
+        "best_negative_score": 0.6690191030502319,
+        "margin": -0.05277639627456665,
+        "correct_rank": 999,
+        "face_quality": null,
+        "detection_score": null,
+        "failure_type": "rank_failure"
+      },
+      {
+        "person_id": 1,
+        "image_id": 335,
+        "positive_score": 0.6496467590332031,
+        "best_negative_person": 0,
+        "best_negative_score": 0.5675677061080933,
+        "margin": 0.08207905292510986,
+        "correct_rank": 999,
+        "face_quality": null,
+        "detection_score": null,
+        "failure_type": "rank_failure"
+      },
+      {
+        "person_id": 1,
+        "image_id": 332,
+        "positive_score": 0.5002286434173584,
+        "best_negative_person": 0,
+        "best_negative_score": 0.5745470523834229,
+        "margin": -0.07431840896606445,
+        "correct_rank": 999,
+        "face_quality": null,
+        "detection_score": null,
+        "failure_type": "rank_failure"
+      },
+      {
+        "person_id": 1,
+        "image_id": 330,
+        "positive_score": 0.5111855268478394,
+        "best_negative_person": 0,
+        "best_negative_score": 0.6241917610168457,
+        "margin": -0.11300623416900635,
+        "correct_rank": 999,
+        "face_quality": null,
+        "detection_score": null,
+        "failure_type": "rank_failure"
+      },
+      {
+        "person_id": 1,
+        "image_id": 331,
+        "positive_score": 0.6755485534667969,
+        "best_negative_person": 0,
+        "best_negative_score": 0.6726395487785339,
+        "margin": 0.0029090046882629395,
+        "correct_rank": 999,
+        "face_quality": null,
+        "detection_score": null,
+        "failure_type": "rank_failure"
+      },
+      {
+        "person_id": 1,
+        "image_id": 336,
+        "positive_score": 0.6515241265296936,
+        "best_negative_person": 0,
+        "best_negative_score": 0.7076792120933533,
+        "margin": -0.05615508556365967,
+        "correct_rank": 999,
+        "face_quality": null,
+        "detection_score": null,
+        "failure_type": "rank_failure"
+      },
+      {
+        "person_id": 1,
+        "image_id": 339,
+        "positive_score": 0.6484814882278442,
+        "best_negative_person": 0,
+        "best_negative_score": 0.6735469102859497,
+        "margin": -0.02506542205810547,
+        "correct_rank": 999,
+        "face_quality": null,
+        "detection_score": null,
+        "failure_type": "rank_failure"
+      },
+      {
+        "person_id": 1,
+        "image_id": 334,
+        "positive_score": 0.5533266663551331,
+        "best_negative_person": 0,
+        "best_negative_score": 0.5730377435684204,
+        "margin": -0.019711077213287354,
+        "correct_rank": 999,
+        "face_quality": null,
+        "detection_score": null,
+        "failure_type": "rank_failure"
+      },
+      {
+        "person_id": 1,
+        "image_id": 333,
+        "positive_score": 0.5438885688781738,
+        "best_negative_person": 0,
+        "best_negative_score": 0.6734049916267395,
+        "margin": -0.12951642274856567,
+        "correct_rank": 999,
+        "face_quality": null,
+        "detection_score": null,
+        "failure_type": "rank_failure"
+      },
+      {
+        "person_id": 1,
+        "image_id": 342,
+        "positive_score": 0.6512019634246826,
+        "best_negative_person": 0,
+        "best_negative_score": 0.6906166076660156,
+        "margin": -0.03941464424133301,
+        "correct_rank": 999,
+        "face_quality": null,
+        "detection_score": null,
+        "failure_type": "rank_failure"
+      },
+      {
+        "person_id": 1,
+        "image_id": 340,
+        "positive_score": 0.6932035088539124,
+        "best_negative_person": 0,
+        "best_negative_score": 0.669700562953949,
+        "margin": 0.02350294589996338,
+        "correct_rank": 999,
+        "face_quality": null,
+        "detection_score": null,
+        "failure_type": "rank_failure"
+      },
+      {
+        "person_id": 1,
+        "image_id": 344,
+        "positive_score": 0.6931653022766113,
+        "best_negative_person": 0,
+        "best_negative_score": 0.6067538261413574,
+        "margin": 0.0864114761352539,
+        "correct_rank": 999,
+        "face_quality": null,
+        "detection_score": null,
+        "failure_type": "rank_failure"
+      },
+      {
+        "person_id": 1,
+        "image_id": 345,
+        "positive_score": 0.6968683004379272,
+        "best_negative_person": 0,
+        "best_negative_score": 0.6813296675682068,
+        "margin": 0.015538632869720459,
+        "correct_rank": 999,
+        "face_quality": null,
+        "detection_score": null,
+        "failure_type": "rank_failure"
+      },
+      {
+        "person_id": 1,
+        "image_id": 329,
+        "positive_score": 0.7739571332931519,
+        "best_negative_person": 0,
+        "best_negative_score": 0.7302069067955017,
+        "margin": 0.043750226497650146,
+        "correct_rank": 999,
+        "face_quality": null,
+        "detection_score": null,
+        "failure_type": "rank_failure"
+      },
+      {
+        "person_id": 1,
+        "image_id": 328,
+        "positive_score": 0.5292069315910339,
+        "best_negative_person": 0,
+        "best_negative_score": 0.7127552032470703,
+        "margin": -0.18354827165603638,
+        "correct_rank": 999,
+        "face_quality": null,
+        "detection_score": null,
+        "failure_type": "rank_failure"
+      },
+      {
+        "person_id": 2,
+        "image_id": 102,
+        "positive_score": 0.6582096815109253,
+        "best_negative_person": 0,
+        "best_negative_score": 0.6004267930984497,
+        "margin": 0.057782888412475586,
+        "correct_rank": 999,
+        "face_quality": null,
+        "detection_score": null,
+        "failure_type": "rank_failure"
+      }
+    ]
+  },
+  "root_cause": {
+    "verdict": "GENUINE_EMBEDDING_FAILURE",
+    "confidence": "HIGH",
+    "evidence": [
+      "Face LOO Rank1 = 0.0%% (poor)",
+      "Face LOO Margin+ = 90.2%% (good)",
+      "Face LOO Threshold (0.75) = 1.8%%, but positive_score median = 0.584",
+      "Face positive median = 0.357, negative median = 0.058, overlap = 3.6%%"
+    ],
+    "recommendation": "Both ranking and margin quality are poor. Embeddings do not cluster well."
+  }
+}

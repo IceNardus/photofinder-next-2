@@ -1,0 +1,107 @@
+{
+  "dataset_verdict": "DATASET_READY",
+  "face_verdict": "FAIL",
+  "body_verdict": "READY",
+  "fusion_verdict": "EXPERIMENTAL",
+  "face_verification": {
+    "auc": 0.0000,
+    "eer": 0.5000,
+    "far_at_01": 0.0000,
+    "far_at_05": 0.0000,
+    "far_at_1": 0.0000,
+    "far_at_5": 0.0000,
+    "frr": 1.0000
+  },
+  "face_identification": {
+    "top1": 0.0000,
+    "top3": 0.0000,
+    "top5": 0.0000,
+    "top10": 0.0000
+  },
+  "face_margin": {
+    "positive_best": 0.0000,
+    "positive_mean": -0.0000,
+    "positive_min": 0.0000,
+    "negative_max": 0.0000,
+    "median": 0.0000,
+    "p10": 0.0000,
+    "p25": 0.0000
+  },
+  "face_loo": {
+    "single": 0.0000,
+    "mean": 0.0000,
+    "median": 0.0000,
+    "geomean": 0.0000
+  },
+  "body_verification": {
+    "auc": 1.0000,
+    "eer": 0.0000,
+    "far_at_01": 0.0000,
+    "far_at_05": 0.0000,
+    "far_at_1": 0.0000,
+    "far_at_5": 0.0000,
+    "frr": 0.0000
+  },
+  "body_identification": {
+    "top1": 1.0000,
+    "top3": 1.0000,
+    "top5": 1.0000,
+    "top10": 1.0000
+  },
+  "body_loo": {
+    "single": 1.0000,
+    "mean": 1.0000,
+    "median": 1.0000,
+    "geomean": 1.0000
+  },
+  "fusion_alpha_sweep": [
+    { "alpha": 0.00, "eer": 0.5000, "far": 0.0000, "frr": 1.0000, "auc": 0.0000, "margin_median": 0.0000 },
+    { "alpha": 0.05, "eer": 0.5000, "far": 0.0000, "frr": 1.0000, "auc": 0.0000, "margin_median": 0.0000 },
+    { "alpha": 0.10, "eer": 0.5000, "far": 0.0000, "frr": 1.0000, "auc": 0.0000, "margin_median": 0.0000 },
+    { "alpha": 0.15, "eer": 0.5000, "far": 0.0000, "frr": 1.0000, "auc": 0.0000, "margin_median": 0.0000 },
+    { "alpha": 0.20, "eer": 0.5000, "far": 0.0000, "frr": 1.0000, "auc": 0.0000, "margin_median": 0.0000 },
+    { "alpha": 0.25, "eer": 0.5000, "far": 0.0000, "frr": 1.0000, "auc": 0.0000, "margin_median": 0.0000 },
+    { "alpha": 0.30, "eer": 0.5000, "far": 0.0000, "frr": 1.0000, "auc": 0.0000, "margin_median": 0.0000 },
+    { "alpha": 0.35, "eer": 0.5000, "far": 0.0000, "frr": 1.0000, "auc": 0.0000, "margin_median": 0.0000 },
+    { "alpha": 0.40, "eer": 0.5000, "far": 0.0000, "frr": 1.0000, "auc": 0.0000, "margin_median": 0.0000 },
+    { "alpha": 0.45, "eer": 0.5000, "far": 0.0000, "frr": 1.0000, "auc": 0.0000, "margin_median": 0.0000 },
+    { "alpha": 0.50, "eer": 0.5000, "far": 0.0000, "frr": 1.0000, "auc": 0.0000, "margin_median": 0.0000 },
+    { "alpha": 0.55, "eer": 0.5000, "far": 0.0000, "frr": 1.0000, "auc": 0.0000, "margin_median": 0.0000 },
+    { "alpha": 0.60, "eer": 0.5000, "far": 0.0000, "frr": 1.0000, "auc": 0.0000, "margin_median": 0.0000 },
+    { "alpha": 0.65, "eer": 0.5000, "far": 0.0000, "frr": 1.0000, "auc": 0.0000, "margin_median": 0.0000 },
+    { "alpha": 0.70, "eer": 0.5000, "far": 0.0000, "frr": 1.0000, "auc": 0.0000, "margin_median": 0.0000 },
+    { "alpha": 0.75, "eer": 0.5000, "far": 0.0000, "frr": 1.0000, "auc": 0.0000, "margin_median": 0.0000 },
+    { "alpha": 0.80, "eer": 0.5000, "far": 0.0000, "frr": 1.0000, "auc": 0.0000, "margin_median": 0.0000 },
+    { "alpha": 0.85, "eer": 0.5000, "far": 0.0000, "frr": 1.0000, "auc": 0.0000, "margin_median": 0.0000 },
+    { "alpha": 0.90, "eer": 0.5000, "far": 0.0000, "frr": 1.0000, "auc": 0.0000, "margin_median": 0.0000 },
+    { "alpha": 0.95, "eer": 0.5000, "far": 0.0000, "frr": 1.0000, "auc": 0.0000, "margin_median": 0.0000 },
+    { "alpha": 1.00, "eer": 0.5000, "far": 0.0000, "frr": 1.0000, "auc": 0.0000, "margin_median": 0.0000 }
+  ],
+  "recommended_alpha": 0.00,
+  "robust_alpha_range": [0.00, 1.00],
+  "false_merge_analysis": {
+    "face_false_merges": 0,
+    "body_false_merges": 0,
+    "fusion_false_merges": 0,
+    "false_split_rate": 0.0000,
+    "cluster_purity": 1.0000,
+    "cluster_recall": 1.0000,
+    "pairwise_precision": 1.0000,
+    "pairwise_recall": 1.0000,
+    "pairwise_f1": 1.0000
+  },
+  "missing_channel_analysis": {
+    "face_body_correct": 0,
+    "face_only_correct": 0,
+    "body_only_correct": 299,
+    "face_missing_correct": 0,
+    "body_missing_correct": 0,
+    "both_missing_correct": 0,
+    "total": 300
+  },
+  "hard_negatives": {
+    "face_hard_count": 0,
+    "body_hard_count": 0,
+    "dual_hard_count": 0
+  }
+}

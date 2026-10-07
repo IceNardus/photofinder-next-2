@@ -1,0 +1,27 @@
+name: photofinder_flutter
+description: PhotoFinder iOS App
+version: 1.0.0
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  image_picker: ^1.1.0
+  photo_manager: ^3.0.0
+  ffi: ^2.0.0
+  image_cropper: ^8.0.0
+  share_plus: ^10.0.0
+  path_provider: ^2.1.0
+  provider: ^6.1.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/models/

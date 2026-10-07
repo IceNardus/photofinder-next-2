@@ -1,0 +1,50 @@
+[package]
+name = "photofinder_flutter_ffi"
+version = "0.1.0"
+edition = "2021"
+
+[workspace]
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+rusqlite = { version = "0.31", features = ["bundled"] }
+r2d2 = "0.8"
+r2d2_sqlite = "0.24"
+sha2 = "0.10"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+image = "0.25"
+dirs = "5.0"
+tokio = { version = "1", features = ["rt-multi-thread", "macros"] }
+log = "0.4"
+env_logger = "0.11"
+libc = "0.2"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["fmt", "env-filter"] }
+
+# pf_ai for FacePipeline and VisualScannerV2
+pf_ai = { path = "../../../crates/pf_ai" }
+pf_config = { path = "../../../crates/pf_config" }
+pf_core = { path = "../../../crates/pf_core" }
+pf_vector = { path = "../../../crates/pf_vector" }
+pf_application = { path = "../../../crates/pf_application" }
+pf_database = { path = "../../../crates/pf_database" }
+pf_license = { path = "../../../crates/pf_license" }
+
+[target.aarch64-linux-android]
+rustflags = ["-C", "link-arg=-llog"]
+panic = "abort"
+
+[target.armv7-linux-androideabi]
+rustflags = ["-C", "link-arg=-llog"]
+panic = "abort"
+
+[target.i686-linux-android]
+rustflags = ["-C", "link-arg=-llog"]
+panic = "abort"
+
+[target.x86_64-linux-android]
+rustflags = ["-C", "link-arg=-llog"]
+panic = "abort"

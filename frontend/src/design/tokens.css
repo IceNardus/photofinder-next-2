@@ -1,0 +1,139 @@
+/* PhotoFinder Next 2 — Design tokens
+ *
+ * 单一来源，所有颜色 / 间距 / 字体从此取。
+ * 改色：只改这里；组件不写硬编码颜色。
+ */
+
+:root {
+  /* === Color palette (dark-first，桌面端默认) === */
+  --color-bg-0: #0c0e12;          /* 主背景 */
+  --color-bg-1: #14171d;          /* sidebar / 卡片底 */
+  --color-bg-2: #1c2028;          /* hover / raised */
+  --color-bg-3: #262b36;          /* input / code */
+
+  --color-fg-0: #e8eaed;          /* 主前景 */
+  --color-fg-1: #b3b8c2;          /* 次要文字 */
+  --color-fg-2: #6f7682;          /* muted / hint */
+
+  --color-border: #2a2f3a;
+  --color-border-strong: #3a4150;
+
+  --color-accent: #5b8def;        /* primary CTA */
+  --color-accent-hover: #4a7ce0;
+  --color-accent-soft: rgba(91, 141, 239, 0.12);
+
+  --color-success: #34c759;
+  --color-warning: #ff9f0a;
+  --color-danger: #ff453a;
+  --color-info: #5ac8fa;
+
+  /* === Spacing (4px grid) === */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+
+  /* === Radius === */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+  --radius-xl: 16px;
+
+  /* === Typography === */
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC',
+               'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+  --font-mono: 'SF Mono', 'Menlo', 'Monaco', 'Cascadia Code', monospace;
+
+  --text-xs: 11px;
+  --text-sm: 12px;
+  --text-base: 13px;
+  --text-md: 14px;
+  --text-lg: 16px;
+  --text-xl: 20px;
+  --text-2xl: 28px;
+
+  --leading-tight: 1.3;
+  --leading-normal: 1.5;
+
+  /* === Shadow === */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.4);
+
+  /* === Layout === */
+  --sidebar-width: 220px;
+  --header-height: 56px;
+  --content-max: 1280px;
+}
+
+/* === Reset === */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  background: var(--color-bg-0);
+  color: var(--color-fg-0);
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#app {
+  height: 100%;
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+button {
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+}
+
+input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* === Utility classes === */
+.muted {
+  color: var(--color-fg-2);
+}
+.text-sm { font-size: var(--text-sm); }
+.text-lg { font-size: var(--text-lg); }
+.text-xl { font-size: var(--text-xl); }
+.text-2xl { font-size: var(--text-2xl); }
+.font-mono { font-family: var(--font-mono); }
+
+.row { display: flex; flex-direction: row; }
+.col { display: flex; flex-direction: column; }
+.gap-1 { gap: var(--space-1); }
+.gap-2 { gap: var(--space-2); }
+.gap-3 { gap: var(--space-3); }
+.gap-4 { gap: var(--space-4); }
+.gap-5 { gap: var(--space-5); }
+.center { display: flex; align-items: center; justify-content: center; }
+.between { display: flex; align-items: center; justify-content: space-between; }
+.flex-1 { flex: 1; }

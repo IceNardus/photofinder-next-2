@@ -1,0 +1,33 @@
+[package]
+name = "pf_ai"
+version = "0.1.0"
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+description = "PhotoFinder Next 2 — AI 推理（ONNX，输出标准化 Embedding / Detection）"
+
+[dependencies]
+serde = { workspace = true }
+thiserror = { workspace = true }
+async-trait = { workspace = true }
+chrono = { workspace = true }
+tracing = { workspace = true }
+tokio = { workspace = true }
+pf_core = { workspace = true }
+pf_config = { workspace = true }
+image = { workspace = true }
+ndarray = { workspace = true }
+once_cell = { workspace = true }
+ort = { workspace = true }
+parking_lot = { workspace = true }
+pf_vector = { workspace = true }
+rand = "0.8"
+
+[dev-dependencies]
+tempfile = "3"
+tokio = { workspace = true }
+blake3 = "1"
+serde_json = "1"
+
+[lints.clippy]
+disallowed_methods = "deny"

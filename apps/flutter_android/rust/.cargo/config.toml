@@ -1,0 +1,7 @@
+[target.aarch64-linux-android]
+ar = "/Users/mac/Library/Android/sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/darwin-x86_64/bin/aarch64-linux-android-ar"
+linker = "/Users/mac/Library/Android/sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/darwin-x86_64/bin/aarch64-linux-android-clang++"
+
+[env]
+# For libsqlite3-sys build script
+CC = "/Users/mac/Library/Android/sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/darwin-x86_64/bin/aarch64-linux-android-clang"

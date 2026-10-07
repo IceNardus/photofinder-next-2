@@ -10,11 +10,9 @@ members = [
     "crates/pf_platform",
     "crates/pf_application",
     "crates/pf_tauri_ipc",
-    "crates/pf_application/tests/single_region_retrieval",
     "apps/desktop/src-tauri",
     "apps/mobile/src-tauri",
     "apps/flutter_ios/rust",
-    "scripts",
 ]
 
 [workspace.package]

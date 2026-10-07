@@ -34,6 +34,11 @@ android/app/*.aab
 # ONNX models (use Git LFS)
 *.onnx
 
+# Model files directory
+models/
+apps/*/assets/
+apps/*/android/app/src/main/assets/
+
 # Database files
 *.db
 *.db-journal

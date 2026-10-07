@@ -1,0 +1,74 @@
+name: Build Release
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    tags: ['v*']
+  pull_request:
+    branches: [main]
+
+jobs:
+  build-tauri:
+    runs-on: ${{ matrix.platform }}
+    strategy:
+      fail-fast: false
+      matrix:
+        platform: [ubuntu-latest, macos-latest, windows-latest]
+        include:
+          - platform: ubuntu-latest
+            target: linux
+          - platform: macos-latest
+            target: macos
+          - platform: windows-latest
+            target: windows
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - uses: dtolnay/rust-toolchain@stable
+
+      - name: Download models
+        shell: bash
+        run: |
+          mkdir -p models
+          if [ ! -f models/w600k_r50.onnx ]; then
+            echo "Downloading models from release..."
+            curl -L -o /tmp/models.tar.gz "https://github.com/IceNardus/photofinder-next-2/releases/download/v0.1.0-models/models.tar.gz"
+            tar -xzf /tmp/models.tar.gz -C .
+            echo "Models downloaded successfully"
+          fi
+
+      - name: Install dependencies
+        if: matrix.platform == 'ubuntu-latest'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libwebkit2gtk-4.1-dev libappindicator3-dev librsvg2-dev patchelf
+
+      - name: Install dependencies
+        if: matrix.platform == 'macos-latest'
+        run: |
+          brew install pkg-config openssl
+
+      - name: Install npm dependencies
+        run: npm install
+
+      - name: Install tauri-cli
+        run: cargo install tauri-cli --locked
+
+      - name: Build
+        run: |
+          npm run build
+          cargo tauri build --bundles none
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.platform }}-build
+          path: |
+            src-tauri/target/release/bundle/**
+            models/

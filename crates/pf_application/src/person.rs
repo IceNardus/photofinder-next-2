@@ -459,6 +459,10 @@ impl PersonService {
                 // UNKNOWN/REVIEW: 不分配，创建新 person 但标记为 pending
                 self.create_and_assign(face_id, embedding)
             }
+            IdentityDecision::StrongMatchWithCompetitor | IdentityDecision::Unreliable | IdentityDecision::SupportedMatch => {
+                // 这些变体暂不处理，视为需要人工审核
+                self.create_and_assign(face_id, embedding)
+            }
         }
     }
 
@@ -808,6 +812,9 @@ impl PersonService {
             IdentityDecision::WeakMatch => "probable",
             IdentityDecision::Ambiguous => "conflict",
             IdentityDecision::NewPerson => "unknown",
+            IdentityDecision::StrongMatchWithCompetitor => "strong_match_with_competitor",
+            IdentityDecision::Unreliable => "unreliable",
+            IdentityDecision::SupportedMatch => "supported_match",
         };
 
         // 计算 disagreement_type
@@ -835,9 +842,9 @@ impl PersonService {
 
         // face/body score 和 margin (Shadow's evidence)
         let face_score = result.face_evidence.as_ref().map(|e| e.score);
-        let face_margin = result.face_evidence.as_ref().map(|e| e.margin);
+        let face_margin = result.face_evidence.as_ref().and_then(|e| e.margin);
         let body_score = result.body_evidence.as_ref().map(|e| e.score);
-        let body_margin = result.body_evidence.as_ref().map(|e| e.margin);
+        let body_margin = result.body_evidence.as_ref().and_then(|e| e.margin);
 
         // face_quality composite and components
         let face_quality = result.face_evidence.as_ref().map(|e| e.quality.composite_quality());

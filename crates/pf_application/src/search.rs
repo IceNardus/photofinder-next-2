@@ -363,11 +363,11 @@ impl SearchService {
         for e in &mut evidence {
             // face_margin: score - max(other)
             if let Some(max_other) = face_scores.iter().filter(|&&s| s < e.face_score).max_by(|a, b| a.partial_cmp(b).unwrap()) {
-                e.face_margin = e.face_score - max_other;
+                e.face_margin = Some(e.face_score - max_other);
             }
             // body_margin: score - max(other)
             if let Some(max_other) = body_scores.iter().filter(|&&s| s < e.body_score).max_by(|a, b| a.partial_cmp(b).unwrap()) {
-                e.body_margin = e.body_score - max_other;
+                e.body_margin = Some(e.body_score - max_other);
             }
         }
 

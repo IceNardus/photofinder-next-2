@@ -4,10 +4,8 @@
   "version": "0.1.0",
   "identifier": "com.photofinder.next",
   "build": {
-    "beforeDevCommand": "cd /Users/mac/ai-project/photofinder-next-2/frontend && npm run dev",
-    "devUrl": "http://localhost:5173",
-    "beforeBuildCommand": "cd /Users/mac/ai-project/photofinder-next-2/frontend && npm run build",
-    "frontendDist": "../../../frontend/dist"
+    "frontendDist": "../../../frontend/dist",
+    "devtools": true
   },
   "app": {
     "withGlobalTauri": false,

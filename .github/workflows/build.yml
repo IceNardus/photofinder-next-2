@@ -32,22 +32,6 @@ jobs:
             echo "Models downloaded successfully"
           fi
 
-      - name: Download icons
-        if: matrix.platform == 'windows-latest'
-        shell: bash
-        run: |
-          ICONS_DIR="apps/desktop/src-tauri/icons"
-          curl -sLO "https://raw.githubusercontent.com/IceNardus/photofinder-next/main/src-tauri/icons/icon.ico" -o "$ICONS_DIR/icon.ico" || true
-          curl -sLO "https://raw.githubusercontent.com/IceNardus/photofinder-next/main/src-tauri/icons/Square107x107Logo.png" -o "$ICONS_DIR/Square107x107Logo.png" || true
-          curl -sLO "https://raw.githubusercontent.com/IceNardus/photofinder-next/main/src-tauri/icons/Square142x142Logo.png" -o "$ICONS_DIR/Square142x142Logo.png" || true
-          curl -sLO "https://raw.githubusercontent.com/IceNardus/photofinder-next/main/src-tauri/icons/Square150x150Logo.png" -o "$ICONS_DIR/Square150x150Logo.png" || true
-          curl -sLO "https://raw.githubusercontent.com/IceNardus/photofinder-next/main/src-tauri/icons/Square284x284Logo.png" -o "$ICONS_DIR/Square284x284Logo.png" || true
-          curl -sLO "https://raw.githubusercontent.com/IceNardus/photofinder-next/main/src-tauri/icons/Square30x30Logo.png" -o "$ICONS_DIR/Square30x30Logo.png" || true
-          curl -sLO "https://raw.githubusercontent.com/IceNardus/photofinder-next/main/src-tauri/icons/Square310x310Logo.png" -o "$ICONS_DIR/Square310x310Logo.png" || true
-          curl -sLO "https://raw.githubusercontent.com/IceNardus/photofinder-next/main/src-tauri/icons/Square44x44Logo.png" -o "$ICONS_DIR/Square44x44Logo.png" || true
-          curl -sLO "https://raw.githubusercontent.com/IceNardus/photofinder-next/main/src-tauri/icons/Square71x71Logo.png" -o "$ICONS_DIR/Square71x71Logo.png" || true
-          curl -sLO "https://raw.githubusercontent.com/IceNardus/photofinder-next/main/src-tauri/icons/Square89x89Logo.png" -o "$ICONS_DIR/Square89x89Logo.png" || true
-          curl -sLO "https://raw.githubusercontent.com/IceNardus/photofinder-next/main/src-tauri/icons/StoreLogo.png" -o "$ICONS_DIR/StoreLogo.png" || true
 
       - name: Install system deps (ubuntu)
         if: matrix.platform == 'ubuntu-latest'

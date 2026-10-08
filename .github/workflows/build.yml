@@ -63,13 +63,17 @@ jobs:
       - name: Install tauri-cli
         run: cargo install tauri-cli --locked
 
-      - name: Build Tauri
-        run: |
-          case "${{ matrix.platform }}" in
-            macos-latest) cargo tauri build --bundles dmg,app ;;
-            windows-latest) cargo tauri build --bundles nsis,msi ;;
-            ubuntu-latest) cargo tauri build --bundles deb,appimage ;;
-          esac
+      - name: Build Tauri (macOS)
+        if: matrix.platform == 'macos-latest'
+        run: cargo tauri build --bundles dmg,app
+
+      - name: Build Tauri (Windows)
+        if: matrix.platform == 'windows-latest'
+        run: cargo tauri build --bundles nsis,msi
+
+      - name: Build Tauri (Ubuntu)
+        if: matrix.platform == 'ubuntu-latest'
+        run: cargo tauri build --bundles deb,appimage
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4

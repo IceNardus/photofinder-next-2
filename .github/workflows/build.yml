@@ -19,10 +19,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-
       - uses: dtolnay/rust-toolchain@stable
 
       - name: Download models
@@ -47,17 +43,8 @@ jobs:
         run: |
           brew install pkg-config openssl
 
-      - name: Install npm deps
-        working-directory: ./frontend
-        run: |
-          npm install
-
       - name: Install tauri-cli
         run: cargo install tauri-cli --locked
-
-      - name: Build frontend
-        working-directory: ./frontend
-        run: npm run build
 
       - name: Build Tauri
         run: cargo tauri build --bundles none

@@ -4,8 +4,7 @@
   "version": "0.1.0",
   "identifier": "com.photofinder.next",
   "build": {
-    "frontendDist": "../../../frontend/dist",
-    "devtools": true
+    "frontendDist": "../../../frontend/dist"
   },
   "app": {
     "withGlobalTauri": false,

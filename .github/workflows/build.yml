@@ -28,7 +28,7 @@ jobs:
           if [ ! -f models/w600k_r50.onnx ]; then
             echo "Downloading models from release..."
             curl -L -o /tmp/models.tar.gz "https://github.com/IceNardus/photofinder-next-2/releases/download/v0.1.0-models/models.tar.gz"
-            tar -xzf /tmp/models.tar.gz -C .
+            tar -xzf /tmp/models.tar.gz -C models
             echo "Models downloaded successfully"
           fi
 

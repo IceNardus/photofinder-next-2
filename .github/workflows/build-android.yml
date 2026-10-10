@@ -1,0 +1,65 @@
+name: Build Android
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    tags: ['v*']
+  pull_request:
+    branches: [main]
+
+jobs:
+  build-android:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+          version: '3.24.0'
+
+      - name: Download models
+        shell: bash
+        run: |
+          mkdir -p models
+          if [ ! -f models/w600k_r50.onnx ]; then
+            echo "Downloading models from release..."
+            curl -L -o /tmp/models.tar.gz "https://github.com/IceNardus/photofinder-next-2/releases/download/v0.1.0-models/models.tar.gz"
+            tar -xzf /tmp/models.tar.gz -C models
+            echo "Models downloaded successfully"
+          fi
+
+      - name: Copy models to assets
+        run: |
+          mkdir -p apps/flutter_android/assets/models
+          cp models/*.onnx apps/flutter_android/assets/models/
+          mkdir -p apps/flutter_android/android/app/src/main/assets/models
+          cp models/*.onnx apps/flutter_android/android/app/src/main/assets/models/
+
+      - name: Install dependencies
+        working-directory: ./apps/flutter_android
+        run: |
+          flutter pub get
+
+      - name: Build APK
+        working-directory: ./apps/flutter_android
+        run: flutter build apk --release
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: android-apk
+          path: apps/flutter_android/build/app/outputs/flutter-apk/app-release.apk

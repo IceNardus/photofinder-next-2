@@ -21,6 +21,11 @@ jobs:
 
       - uses: dtolnay/rust-toolchain@stable
 
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
       - name: Download models
         shell: bash
         run: |
@@ -32,6 +37,11 @@ jobs:
             echo "Models downloaded successfully"
           fi
 
+      - name: Build frontend
+        working-directory: ./frontend
+        run: |
+          npm install
+          npm run build
 
       - name: Install system deps (ubuntu)
         if: matrix.platform == 'ubuntu-latest'

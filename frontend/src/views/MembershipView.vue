@@ -84,10 +84,10 @@ function formatDate(timestamp: number): string {
         </div>
         <div v-if="license.license.status === 'active'" class="kv">
           <div class="kv-row"><span class="muted">剩余</span><span class="highlight">{{ license.remainingDays }} 天</span></div>
-          <div class="kv-row"><span class="muted">到期时间</span><span>{{ formatDate(license.license.expires_at) }}</span></div>
+          <div class="kv-row"><span class="muted">到期时间</span><span>{{ license.license.expires_at ? formatDate(license.license.expires_at) : 'N/A' }}</span></div>
         </div>
         <div v-else-if="license.license.status === 'expired'" class="kv">
-          <div class="kv-row"><span class="muted">到期时间</span><span>{{ formatDate(license.license.expires_at) }}</span></div>
+          <div class="kv-row"><span class="muted">到期时间</span><span>{{ license.license.expires_at ? formatDate(license.license.expires_at) : 'N/A' }}</span></div>
         </div>
       </div>
       <div v-else class="empty-hint">暂无会员信息</div>

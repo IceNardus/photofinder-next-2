@@ -239,6 +239,52 @@ export function getImageThumbnail(args: GetImageThumbnailArgs): Promise<string> 
 }
 
 // ----------------------------------------------------------------------------
+// License / Account (stub implementations)
+// ----------------------------------------------------------------------------
+
+export interface Account {
+  id: number;
+  username: string;
+  email: string;
+  created_at: number;  // timestamp
+}
+
+export interface License {
+  status: string;
+  plan: string;
+  expires_at: number | null;
+  remaining_days: number;
+}
+
+export function checkLicense(): Promise<boolean> {
+  return Promise.resolve(true);
+}
+
+export function getAccount(): Promise<Account | null> {
+  return Promise.resolve(null);
+}
+
+export function getLicenseStatus(): Promise<License | null> {
+  return Promise.resolve(null);
+}
+
+export function loginAccount(_username: string, _password: string): Promise<Account> {
+  return Promise.reject(new Error('Not implemented'));
+}
+
+export function logoutAccount(): Promise<void> {
+  return Promise.resolve();
+}
+
+export function redeemCode(_code: string): Promise<License> {
+  return Promise.reject(new Error('Not implemented'));
+}
+
+export function registerAccount(_email: string, _password: string): Promise<Account> {
+  return Promise.reject(new Error('Not implemented'));
+}
+
+// ----------------------------------------------------------------------------
 // Re-export types for convenience
 // ----------------------------------------------------------------------------
 

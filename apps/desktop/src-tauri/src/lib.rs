@@ -35,7 +35,8 @@ use crate::desktop_setup::bootstrap;
 /// 应用入口（`main.rs` 调用）。
 pub fn run() {
     if let Err(e) = desktop_setup::init_logging() {
-        eprintln!("failed to init logging: {e}");
+        // Windows GUI 模式下 eprintln! 无输出，改用 tracing
+        tracing::error!(error = %e, "failed to init logging");
     }
 
     info!("PhotoFinder Next 2 starting…");
@@ -44,6 +45,8 @@ pub fn run() {
         Ok(b) => b,
         Err(e) => {
             error!(error = %e, "bootstrap failed");
+            // 确保错误被写入日志文件
+            tracing::error!(error = %e, "app exiting due to bootstrap failure");
             std::process::exit(1);
         }
     };

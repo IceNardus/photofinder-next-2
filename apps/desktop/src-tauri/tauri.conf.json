@@ -46,16 +46,27 @@
       "icons/StoreLogo.png"
     ],
     "resources": [
-      "../../../models/*",
-      "../../../frontend/dist/*"
+      {
+        "source": "../../../models",
+        "target": "models"
+      },
+      {
+        "source": "../../../frontend/dist",
+        "target": ""
+      }
     ],
     "category": "Photography",
     "shortDescription": "Local AI photo engine — person + object search",
     "longDescription": "Cross-platform offline photo search with face and object recognition.",
     "windows": {
       "nsis": {
-        "languages": ["SimpChinese", "English"],
-        "displayLanguageSelector": false
+        "languages": ["English", "SimpChinese"],
+        "displayLanguageSelector": true,
+        "installDir": "$PROGRAMFILES/PhotoFinderNext",
+        "installerFilename": "PhotoFinder-Next-Setup"
+      },
+      "webviewInstallMode": {
+        "type": "downloadBootstrapper"
       }
     }
   },

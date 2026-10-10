@@ -45,7 +45,10 @@
       "icons/Square310x310Logo.png",
       "icons/StoreLogo.png"
     ],
-    "resources": ["../../../models/*"],
+    "resources": [
+      "../../../models/*",
+      "../../../frontend/dist/*"
+    ],
     "category": "Photography",
     "shortDescription": "Local AI photo engine — person + object search",
     "longDescription": "Cross-platform offline photo search with face and object recognition.",

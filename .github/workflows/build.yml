@@ -80,5 +80,5 @@ jobs:
         with:
           name: ${{ matrix.platform }}-build
           path: |
-            apps/desktop/src-tauri/target/release/bundle/**
+            target/release/bundle/**
             apps/desktop/src-tauri/resources/

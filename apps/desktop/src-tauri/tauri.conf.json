@@ -46,7 +46,7 @@
       "icons/StoreLogo.png"
     ],
     "resources": [
-      "src-tauri/resources/models/",
+      "resources/models/",
       "../../../frontend/dist/"
     ],
     "category": "Photography",

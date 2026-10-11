@@ -7,7 +7,7 @@
     "frontendDist": "../../../frontend/dist"
   },
   "app": {
-    "withGlobalTauri": false,
+    "withGlobalTauri": true,
     "windows": [
       {
         "label": "main",
@@ -56,9 +56,6 @@
       "nsis": {
         "languages": ["English", "SimpChinese"],
         "displayLanguageSelector": true
-      },
-      "webviewInstallMode": {
-        "type": "downloadBootstrapper"
       }
     }
   },
